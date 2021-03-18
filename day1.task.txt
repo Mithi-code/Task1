@@ -1,0 +1,49 @@
+Q-Difference between http1.1 vs 2:-
+
+1.From a technical point of view, one of the most significant features that distinguishes HTTP/1.1 and HTTP/2 is the binary
+ framing layer, which can be thought of as a part of the application layer in the internet protocol stack.
+2.HTTP/1.1 transfers in plain-text messages, HTTP/2 encodes these into binary, allowing for significantly different 
+delivery model possibilities.
+3.In HTTP/1.1, flow control relies on the underlying TCP connection. When this connection initiates, both client and
+ server establish their buffer sizes using their system default settings.If the receiver’s buffer is partially filled with data,
+ it will tell the sender its receive window, i.e., the amount of available space that remains in its buffer.HTTP/2 multiplexes
+ streams of data within a single TCP connection. As a result, receive windows on the level of the TCP connection are not 
+sufficient to regulate the delivery of individual streams. HTTP/2 solves this problem by allowing the client and server to 
+implement their own flow controls, rather than relying on the transport layer.:-
+
+Q- http version history:-
+-The term hypertext was coined by Ted Nelson in 1965 in the Xanadu Project, which was in turn inspired by Vannevar Bush's 1930s 
+vision of the microfilm-based information retrieval and management "memex" system described in his 1945 essay "As We May Think". 
+Tim Berners-Lee and his team at CERN are credited with inventing the original HTTP, along with HTML and the associated technology
+ for a web server and a text-based web browser. Berners-Lee first proposed the "WorldWideWeb" project in 1989—now known as the 
+World Wide Web. The first version of the protocol had only one method, namely GET, which would request a page from a server.
+The response from the server was always an HTML page.
+-1991	0.9
+-1996	1.0
+-1997	1.1
+-2015	2.0
+-2020          3.0
+
+Q-List 5 diffrences between browser js(c0nsole) v node js:-
+
+1.Big difference is that in Node.js you control the environment. Unless you are building an open source application
+ that anyone can deploy anywhere, you know which version of Node you will run the application on. Compared to the browser
+ environment, where you don’t get the luxury to choose what browser your visitors will use, this is very convenient.
+2.Node uses the CommonJS module system, while in the browser we are starting to see the ES Modules standard being 
+implemented.
+3.Building apps that run in the browser is a completely different thing than building a Node.js application.
+4.In the browser, most of the time what you are doing is interacting with the DOM, or other Web Platform APIs like Cookies.
+Those do not exist in Node, of course. You don’t have the document, window and all the other objects that are provided by 
+the browser.
+5.You can use Babel to transform your code to be ES5-compatible before shipping it to the browser, but in Node, you won’t need
+that.
+
+Q- what happens when you type a URL in the address bar in the browser:-
+- There are following steps when you type a url in address bar in the browser
+1-You enter a URL into a web browser
+2-The browser looks up the IP address for the domain name via DNS
+3-The browser sends a HTTP request to the server
+4-The server sends back a HTTP response
+5-The browser begins rendering the HTML
+6-The browser sends requests for additional objects embedded in HTML (images, css, JavaScript) and repeats steps 3-5.
+7-Once the page is loaded, the browser sends further async requests as needed.
